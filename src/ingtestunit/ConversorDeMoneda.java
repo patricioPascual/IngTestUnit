@@ -20,7 +20,8 @@ public class ConversorDeMoneda {
 
 public static double calcularCotizacion(double cantidadEntregada, double cantidadRecibida) {
         if (cantidadRecibida == 0) {
-            throw new IllegalArgumentException("La cantidad recibida no puede ser cero.");
+            System.out.println("no hay nada que cotizar!");
+           return 0;//no  se si esta bien... o lanzar exception
         }
         return cantidadEntregada / cantidadRecibida;
     }
@@ -35,7 +36,7 @@ public static double aumentarSaldo(double saldoActual, double montoComprado) {
 
 public static void simularRetiroFisico(double saldoTotal, int denominacion) {
         if (denominacion <= 0) {
-            System.out.println("La denominación del billete debe ser mayor a cero.");
+            System.out.println("La denominacion del billete debe ser mayor a cero.");
             return;
         }
 
@@ -43,7 +44,7 @@ public static void simularRetiroFisico(double saldoTotal, int denominacion) {
      
         double saldoRestante = saldoTotal % denominacion;
 
-        System.out.println("--- Simulación de Retiro Físico ---");
+        System.out.println("Simulacion de Retiro Fisico ");
         System.out.println("Saldo total a retirar: U$S " + saldoTotal);
         System.out.println("Billetes entregados (" + denominacion + "): " + cantidadBilletes);
         System.out.println("Saldo restante en cuenta: U$S " + saldoRestante);
