@@ -4,11 +4,12 @@
  */
 package ingtestunit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
+import org.junit.Before;
+import org.junit.After;      
+import org.junit.Test;       
+import static org.junit.Assert.*; 
+
 
 public class ConversorDeMonedaTest {
 
@@ -17,17 +18,17 @@ public class ConversorDeMonedaTest {
     public ConversorDeMonedaTest() {
     }
 
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
         conversor = new ConversorDeMoneda();
     }
 
-    @BeforeEach
-    public static void setUp() {
+    @Before
+    public  void setUp() {
         System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         System.out.println("Prueba finalizada!");
 
@@ -37,12 +38,12 @@ public class ConversorDeMonedaTest {
     public void testConvertir() {
         System.out.println("convertir");
         double cantidad = 200;
-        double cotizacion = conversor.calcularCotizacion(cantidad, cantidad);
-        double expResult = 0.0;
+        double cotizacion = 1000;
+        double expResult = 200000;
         double result = conversor.convertir(cantidad, cotizacion);
         assertEquals(expResult, result, 0.001);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -51,13 +52,13 @@ public class ConversorDeMonedaTest {
     @Test
     public void testCalcularCotizacion() {
         System.out.println("calcularCotizacion");
-        double cantidadEntregada = 0.0;
-        double cantidadRecibida = 0.0;
-        double expResult = 0.0;
+        double cantidadEntregada = 1700;
+        double cantidadRecibida = 17;
+        double expResult = 100;
         double result = ConversorDeMoneda.calcularCotizacion(cantidadEntregada, cantidadRecibida);
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.001);
+        
+      
     }
 
     /**
@@ -67,12 +68,12 @@ public class ConversorDeMonedaTest {
     public void testAumentarSaldo() {
         System.out.println("aumentarSaldo");
         double saldoActual = 0.0;
-        double montoComprado = 0.0;
-        double expResult = 0.0;
+        double montoComprado = 500;
+        double expResult = 500;
         double result = ConversorDeMoneda.aumentarSaldo(saldoActual, montoComprado);
         assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+      
     }
 
     /**
@@ -81,11 +82,12 @@ public class ConversorDeMonedaTest {
     @Test
     public void testSimularRetiroFisico() {
         System.out.println("simularRetiroFisico");
-        double saldoTotal = 0.0;
-        int denominacion = 0;
+        double saldoTotal = 500;
+        int denominacion = 100;
+        double expected=5;
         ConversorDeMoneda.simularRetiroFisico(saldoTotal, denominacion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
+      
     }
 
 }
