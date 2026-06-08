@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.After;      
 import org.junit.Test;       
 import static org.junit.Assert.*; 
+import java.lang.ArithmeticException;
 
 
 public class ConversorDeMonedaTest {
@@ -45,7 +46,7 @@ public class ConversorDeMonedaTest {
        
         //fail("The test case is a prototype.");
     }
-
+    
     /**
      * Test of calcularCotizacion method, of class ConversorDeMoneda.
      */
@@ -60,7 +61,11 @@ public class ConversorDeMonedaTest {
         
       
     }
-
+    
+    @Test(expected = ArithmeticException.class)
+    public void testCalcularCotizacionArith() {
+       ConversorDeMoneda.calcularCotizacion(1700.0, 0.0);
+    }
     /**
      * Test of aumentarSaldo method, of class ConversorDeMoneda.
      */

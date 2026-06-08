@@ -19,8 +19,7 @@ public class ConversorDeMoneda {
 
     public static double calcularCotizacion(double cantidadEntregada, double cantidadRecibida) {
         if (cantidadRecibida == 0) {
-            System.out.println("no hay nada que cotizar!");
-            return 0;//no  se si esta bien... o lanzar exception
+            throw new ArithmeticException("No se puede calcular la cotizacion con cantidad recibida igual a cero");
         }
         return cantidadEntregada / cantidadRecibida;
     }
