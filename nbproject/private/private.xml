@@ -10,10 +10,6 @@
             <file>file:/C:/Users/Admin/Documents/GitHub/IngTestUnit/test/ingtestunit/MiSweetSuite.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/IngTestUnit/test/ingtestunit/CotizacionTest.java</file>
         </group>
-        <group>
-            <file>file:/C:/Users/patri/OneDrive/Documentos/NetBeansProjects/IngTestUnit/src/ingtestunit/IngTestUnit.java</file>
-            <file>file:/C:/Users/patri/OneDrive/Documentos/NetBeansProjects/IngTestUnit/src/ingtestunit/ConversorDeMoneda.java</file>
-            <file>file:/C:/Users/patri/OneDrive/Documentos/NetBeansProjects/IngTestUnit/test/ingtestunit/ConversorDeMonedaTest.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
