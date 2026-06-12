@@ -7,15 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Copiar el código del alumno
-      uses: actions/checkout@v4
-
-    - name: Configurar Java 17
+    - name: Configurar Java 23
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '23'
         distribution: 'temurin'
-        cache: 'maven'
 
-    - name: Ejecutar pruebas de JUnit 5 con Maven
-      run: mvn --batch-mode clean test
+    - name: Instalar Ant
+      run: sudo apt-get update && sudo apt-get install -y ant
+
+    - name: Ejecutar tests
+      run: ant test
